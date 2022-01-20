@@ -1,0 +1,19 @@
+-------------------------------
+v. 20220117
+
+Docker container from jupyter/r-notebook:latest
+
+Python packages added:
+
+- lckr-jupyterlab-variableinspector
+
+R libraries:
+
+- devtools
+- repr
+- svglite
+- latex2exp
+- rstatix
+- ggpubr
+- ggsci
+- tidyverse
