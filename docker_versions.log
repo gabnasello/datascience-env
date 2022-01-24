@@ -1,13 +1,22 @@
 -------------------------------
 v. 20220117
 
+- Adding RStudio Server and rstudio username
+
+R package added:
+
+- lmerTest
+
+-------------------------------
+v. 20220117
+
 Docker container from jupyter/r-notebook:latest
 
 Python packages added:
 
 - lckr-jupyterlab-variableinspector
 
-R libraries:
+R packages added:
 
 - devtools
 - repr
