@@ -17,6 +17,7 @@ install.packages('ggraph',repos = 'http://cran.us.r-project.org')
 
 
 # Packages for statistics 
+install.packages('datarium',repos = 'http://cran.us.r-project.org')
 ## Basic Statistical Tests
 install.packages('rstatix',repos = 'http://cran.us.r-project.org')
 ## Tests in Linear Mixed Effects Models
