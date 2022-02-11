@@ -13,7 +13,7 @@ RUN echo "alias jl='export SHELL=/bin/bash; jupyter lab --allow-root --port=7777
 
 USER root
 RUN apt-get update && \ 
-    apt install -yq apt-utils libfontconfig1-dev tmux cmake
+    apt install -yq apt-utils libfontconfig1-dev tmux cmake vim
 USER jovyan
 
 # Install R packages
