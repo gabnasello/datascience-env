@@ -1,4 +1,17 @@
 -------------------------------
+v. 20220211
+
+- Install vim
+
+-------------------------------
+v. 20220206
+
+Python packages added:
+
+- pandas
+- seaborn
+
+-------------------------------
 v. 20220124
 
 - Adding RStudio Server and rstudio username
