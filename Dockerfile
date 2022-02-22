@@ -3,6 +3,10 @@
 
 FROM jupyter/r-notebook:latest
 
+# How to connect all conda envs to jupyter notebook
+# https://stackoverflow.com/questions/61494376/how-to-connect-r-conda-env-to-jupyter-notebook
+RUN conda install -y -n base nb_conda_kernels
+
 # Install Python packages
 ADD requirements.txt .
 RUN pip install -r requirements.txt

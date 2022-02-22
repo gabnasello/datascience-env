@@ -1,4 +1,9 @@
 -------------------------------
+v. 20220222
+
+- Install nb_conda_kernels in the base environment
+
+-------------------------------
 v. 20220211
 
 - Install vim
