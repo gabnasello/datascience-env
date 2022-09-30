@@ -1,3 +1,9 @@
+v. 20220930
+
+Add the -p argument to the "jl" commands
+
+-------------------------------
+
 v. 20220728
 
 - Install Python package "openpyxl" in the base environment and build-essential for g++
