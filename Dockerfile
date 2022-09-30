@@ -12,8 +12,8 @@ ADD requirements.txt .
 RUN pip install -r requirements.txt
 
 # Set the jl command to create a JupytetLab shortcut
-EXPOSE 7777
-RUN echo "alias jl='export SHELL=/bin/bash; jupyter lab --allow-root --port=7777 --ip=0.0.0.0'" >> ~/.bashrc
+ADD launch_jupyterlab.sh /
+RUN echo "alias jl='bash /launch_jupyterlab.sh'" >> ~/.bashrc
 
 USER root
 RUN apt-get update && \ 
