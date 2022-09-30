@@ -1,3 +1,4 @@
 lckr-jupyterlab-variableinspector
 pandas
 seaborn
+openpyxl
