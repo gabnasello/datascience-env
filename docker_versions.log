@@ -1,3 +1,15 @@
+-------------------------------
+
+v. 20221107
+
+Update base docker file to jupyter/r-notebook:2022-11-07
+
+Install the following packages:
+
+- papermill
+
+-------------------------------
+
 v. 20220930
 
 Add the -p argument to the "jl" commands

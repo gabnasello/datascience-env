@@ -2,3 +2,4 @@ lckr-jupyterlab-variableinspector
 pandas
 seaborn
 openpyxl
+papermill

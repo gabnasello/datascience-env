@@ -1,7 +1,7 @@
 # docker-stacks/r-notebook [https://github.com/jupyter/docker-stacks/tree/master/r-notebook]
 # https://hub.docker.com/r/jupyter/r-notebook/dockerfile
 
-FROM jupyter/r-notebook:latest
+FROM jupyter/r-notebook:2022-11-07
 
 # How to connect all conda envs to jupyter notebook
 # https://stackoverflow.com/questions/61494376/how-to-connect-r-conda-env-to-jupyter-notebook
@@ -34,9 +34,9 @@ RUN useradd -ms /bin/bash rstudio && \
 
 WORKDIR /
 RUN apt-get install -yq gdebi-core  && \
-    wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-2021.09.2-382-amd64.deb  && \
-    gdebi -n rstudio-server-2021.09.2-382-amd64.deb && \
-    rm rstudio-server-2021.09.2-382-amd64.deb
+    wget https://s3.amazonaws.com/rstudio-ide-build/server/jammy/amd64/rstudio-server-2022.12.0-preview-314-amd64.deb  && \
+    gdebi -n rstudio-server-2022.12.0-preview-314-amd64.deb && \
+    rm rstudio-server-2022.12.0-preview-314-amd64.deb
 
 # Change default port for Rstudio server to 7878
 # Give the rstudio user sudo priviledges without asking for a password (only sudo commando from rstudio terminal)
