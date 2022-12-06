@@ -3,3 +3,4 @@ pandas
 seaborn
 openpyxl
 papermill
+jupyter-book

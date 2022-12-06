@@ -1,5 +1,15 @@
 -------------------------------
 
+v. 20221128
+
+Update base docker file to jupyter/r-notebook:2022-11-28
+
+Install the following packages:
+
+- jupyter-book
+
+-------------------------------
+
 v. 20221107
 
 Update base docker file to jupyter/r-notebook:2022-11-07
