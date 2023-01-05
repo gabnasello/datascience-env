@@ -1,13 +1,5 @@
 -------------------------------
 
-v. 20230105
-
-Update base docker file to jupyter/r-notebook:2023-01-04
-
-Add ENTRYPOINT in the Dockerfile and docker-compose.yaml file
-
--------------------------------
-
 v. 20221128
 
 Update base docker file to jupyter/r-notebook:2022-11-28

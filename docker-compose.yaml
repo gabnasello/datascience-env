@@ -2,7 +2,7 @@ version: '3'
 
 services:
   datascience-environment:
-    image: gnasello/datascience-env:latest
+    image: gnasello/datascience-env:20221128
     ports:
       - 7777:7777
     volumes:
@@ -10,3 +10,4 @@ services:
     working_dir: '/home/researcher'
     container_name: datascience-u0128401
     entrypoint: bash /launch_jupyterlab.sh -p 7777
+    user: root
