@@ -1,7 +1,7 @@
 # docker-stacks/r-notebook [https://github.com/jupyter/docker-stacks/tree/master/r-notebook]
 # https://hub.docker.com/r/jupyter/r-notebook/dockerfile
 
-FROM jupyter/r-notebook:2022-11-28
+FROM jupyter/r-notebook:2023-01-04
 
 # How to connect all conda envs to jupyter notebook
 # https://stackoverflow.com/questions/61494376/how-to-connect-r-conda-env-to-jupyter-notebook
@@ -13,6 +13,12 @@ RUN pip install -r requirements.txt
 
 # Set the jl command to create a JupytetLab shortcut
 ADD launch_jupyterlab.sh /
+# Give execute permissions to set the entrypoint at the end of the file
+# Set the permissions before you build the image in your local directory
+# The ADD command is most likely copying the file as root. You can change back to the jovyan user after fixing the permissions.
+USER root
+RUN chmod +x /launch_jupyterlab.sh
+USER jovyan
 RUN echo "alias jl='bash /launch_jupyterlab.sh'" >> ~/.bashrc
 
 USER root
@@ -49,3 +55,4 @@ RUN echo "www-port=7878" > /etc/rstudio/rserver.conf && \
 ADD launch_rstudio_server.sh .
 RUN echo "alias rs='bash /launch_rstudio_server.sh'" >> ~/.bashrc
 
+ENTRYPOINT [ "/launch_jupyterlab.sh" ]

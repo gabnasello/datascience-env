@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  datascience-environment:
+    image: gnasello/datascience-env:latest
+    ports:
+      - 7777:7777
+    volumes:
+      - /home/luna.kuleuven.be/u0128401:/home/researcher # change the path before ":" with the volume you want to mount
+    working_dir: '/home/researcher'
+    container_name: datascience-u0128401
+    entrypoint: bash /launch_jupyterlab.sh -p 7777
