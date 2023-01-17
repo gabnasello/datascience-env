@@ -3,6 +3,14 @@
 
 FROM jupyter/r-notebook:2022-11-28
 
+# Configure environment
+ENV DOCKER_IMAGE_NAME='datascience-env'
+
+# Docker image name to shell prompt
+ENV PS1A="[$DOCKER_IMAGE_NAME] \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+RUN echo 'PS1=$PS1A' >> ~/.bashrc
+RUN echo 'conda activate base' >> ~/.bashrc
+
 # How to connect all conda envs to jupyter notebook
 # https://stackoverflow.com/questions/61494376/how-to-connect-r-conda-env-to-jupyter-notebook
 RUN conda install -y -n base nb_conda_kernels
@@ -12,13 +20,7 @@ ADD requirements.txt .
 RUN pip install -r requirements.txt
 
 # Set the jl command to create a JupytetLab shortcut
-ADD launch_jupyterlab.sh /
-# Give execute permissions to set the entrypoint at the end of the file
-# Set the permissions before you build the image in your local directory
-# The ADD command is most likely copying the file as root. You can change back to the jovyan user after fixing the permissions.
-#USER root
-#RUN chmod +x /launch_jupyterlab.sh
-#USER jovyan
+ADD scripts/launch_jupyterlab.sh /
 RUN echo "alias jl='bash /launch_jupyterlab.sh'" >> ~/.bashrc
 
 USER root
@@ -52,7 +54,9 @@ RUN echo "www-port=7878" > /etc/rstudio/rserver.conf && \
     usermod -aG sudo rstudio && \
     echo 'jovyan ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-ADD launch_rstudio_server.sh .
+ADD scripts/launch_rstudio_server.sh .
 RUN echo "alias rs='bash /launch_rstudio_server.sh'" >> ~/.bashrc
 
-ENTRYPOINT [ "/launch_jupyterlab.sh" ]
+ADD scripts/entrypoint.sh .
+ADD scripts/message.sh .
+RUN echo "bash /message.sh" >> ~/.bashrc

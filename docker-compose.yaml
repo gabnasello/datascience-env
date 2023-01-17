@@ -2,12 +2,16 @@ version: '3'
 
 services:
   datascience-environment:
-    image: gnasello/datascience-env:20221128
+    #image: gnasello/datascience-env:20221128
+    image: gnasello/datascience-env:20230105.1
     ports:
       - 7777:7777
     volumes:
       - /home/luna.kuleuven.be/u0128401:/home/researcher # change the path before ":" with the volume you want to mount
-    working_dir: '/home/researcher'
+    working_dir: /home/researcher
     container_name: datascience-u0128401
+    #entrypoint: /usr/bin/bash
     entrypoint: bash /launch_jupyterlab.sh -p 7777
     user: root
+    #stdin_open: true # to have an interactive shell with the docker-compose setup
+    #tty: true # to have an interactive shell with the docker-compose setup
