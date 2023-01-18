@@ -1,18 +1,43 @@
-# Create a Docker Image for basic data science
+# Docker Image for basic data science
 
-## How it works
+# Build the docker image
 
-- The ```Dockerfile``` creates a Docker Image based on  [jupyter/r-notebook](https://hub.docker.com/r/jupyter/r-notebook).
-- It adds Python packages 
-- It adds R packages
+From the project folder, run the command below:
 
-## Create a new image
+```bash build.sh```
 
-First, clone the repo:
+# Run docker container
 
-```git clone https://github.com/gabnasello/datascience-env.git``` 
+## Standard approach (recommended)
 
-and run the ```build.sh``` script
+From the project folder, run the command below:
 
-# Run the Docker container
+```bash start-docker.sh```
 
+Which automatically updates the .env and create a new Docker Image with the ```researcher``` user sharing the ID of the host user.
+
+## docker-compose approach
+
+Be aware that the user ```researhcer``` within you Docker container won't share the same ID as the host user!
+
+From the project folder, run the command below:
+
+```docker-compose up -d```
+
+Close the container with:
+
+```docker-compose down```
+
+## Alternative approach
+
+You can run the following command:
+
+```docker run -d -it --rm  -p 7777:7777 -p 7878:7878 --volume $HOME:/home/researcher --user root --name datascience-env gnasello/datascience-env:latest```
+
+To connect to a container that is already running ("slicer" is the container name):
+
+```docker exec -it datascience-env /bin/bash```
+
+After use, you close the container with:
+
+```docker rm -f datascience-env```

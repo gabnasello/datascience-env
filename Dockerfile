@@ -5,9 +5,10 @@ FROM jupyter/r-notebook:2022-11-28
 
 # Configure environment
 ENV DOCKER_IMAGE_NAME='datascience-env'
+ENV VERSION='2023-01-19' 
 
-# Docker image name to shell prompt
-ENV PS1A="[$DOCKER_IMAGE_NAME] \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+# Docker name to shell prompt
+ENV PS1A="[docker] \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
 RUN echo 'PS1=$PS1A' >> ~/.bashrc
 RUN echo 'conda activate base' >> ~/.bashrc
 
@@ -53,6 +54,7 @@ EXPOSE 7878
 RUN echo "www-port=7878" > /etc/rstudio/rserver.conf && \
     usermod -aG sudo rstudio && \
     echo 'jovyan ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+USER jovyan
 
 ADD scripts/launch_rstudio_server.sh .
 RUN echo "alias rs='bash /launch_rstudio_server.sh'" >> ~/.bashrc

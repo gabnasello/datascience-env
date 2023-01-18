@@ -1,5 +1,11 @@
 -------------------------------
 
+v. 20230119
+
+Make user-specific Docker containers
+
+-------------------------------
+
 v. 20221128
 
 Update base docker file to jupyter/r-notebook:2022-11-28
