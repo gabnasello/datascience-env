@@ -1,12 +1,12 @@
 # Docker Image for basic data science
 
-# Build the docker image
+# Build the Docker Image
 
 From the project folder, run the command below:
 
 ```bash build.sh```
 
-# Run docker container
+# Run Docker container
 
 ## Standard approach (recommended)
 

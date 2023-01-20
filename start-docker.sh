@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVICENAME='datascience-env'
+SERVICENAME='datascience'
 
 docker-compose up -d --build 
 
