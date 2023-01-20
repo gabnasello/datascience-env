@@ -1,5 +1,5 @@
 #!/bin/bash
 
-SERVICENAME='datascience-env'
+SERVICENAME='datascience'
 
 docker-compose exec $SERVICENAME bash
