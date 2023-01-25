@@ -36,4 +36,4 @@ To connect to a container that is already running ("datascience" is the containe
 
 After use, you close the container with:
 
-```docker rm -f datascience-env```
+```docker rm -f datascience```
