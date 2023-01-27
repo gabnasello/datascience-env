@@ -14,4 +14,8 @@ jupyter server list
 
 echo -e $GREEN'\n   Rstudio\n'$NOCOLOR
 
+echo "session-default-working-dir=$PWD" > /etc/rstudio/rsession.conf
+rstudio-server restart
+
+echo -e " user: rstudio \n password: rstudio \n"
 echo -e 'http://'$HOST_NAME':'$RSPORT'\n\n'

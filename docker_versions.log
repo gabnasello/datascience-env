@@ -1,5 +1,13 @@
 -------------------------------
 
+v. 2023-01-27
+
+Update base docker file to jupyter/r-notebook:2023-01-24
+
+Update Rstudio server message at startup
+
+-------------------------------
+
 v. 20230119
 
 Make user-specific Docker containers
