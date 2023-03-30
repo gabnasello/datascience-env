@@ -2,7 +2,7 @@ version: '3'
 
 services:
   datascience:
-    image: gnasello/datascience-env:2023-01-19
+    image: gnasello/datascience-env:2023-03-29
     build: .
     ports:
       - $JLPORT:$JLPORT
@@ -12,7 +12,6 @@ services:
     working_dir: /home/researcher
     entrypoint: bash /entrypoint.sh
     hostname: $HOST_NAME
-    user: root
     environment:
        - JLPORT=${JLPORT}
        - RSPORT=${RSPORT}
