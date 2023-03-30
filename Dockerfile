@@ -5,7 +5,7 @@ FROM jupyter/r-notebook:2023-03-27
 
 # Configure environment
 ENV DOCKER_IMAGE_NAME='datascience-env'
-ENV VERSION='2023-03-29' 
+ENV VERSION='2023-03-30' 
 
 # Docker name to shell prompt
 ENV PS1A="[docker] \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
@@ -17,8 +17,8 @@ RUN echo 'conda activate base' >> ~/.bashrc
 RUN conda install -y -n base nb_conda_kernels
 
 # Install Python packages
-ADD requirements.txt .
-RUN pip install -r requirements.txt
+ADD requirements.txt /
+RUN pip install -r /requirements.txt
 
 # Set the jl command to create a JupytetLab shortcut
 ADD scripts/launch_jupyterlab.sh /
@@ -30,8 +30,8 @@ RUN apt-get update && \
 USER jovyan
 
 # Install R packages
-ADD install_r_packages.R .
-RUN Rscript install_r_packages.R
+ADD install_r_packages.R /
+RUN Rscript /install_r_packages.R
 
 
 # Install R Studio Server
@@ -56,9 +56,11 @@ RUN echo "www-port=7878" > /etc/rstudio/rserver.conf && \
     echo 'jovyan ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER jovyan
 
-ADD scripts/launch_rstudio_server.sh .
+ADD scripts/launch_rstudio_server.sh /
 RUN echo "alias rs='bash /launch_rstudio_server.sh'" >> ~/.bashrc
 
-ADD scripts/entrypoint.sh .
-ADD scripts/message.sh .
+ADD scripts/entrypoint.sh /
+ADD scripts/message.sh /
 RUN echo "bash /message.sh" >> ~/.bashrc
+
+WORKDIR /home/jovyan
