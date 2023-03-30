@@ -1,11 +1,11 @@
 # docker-stacks/r-notebook [https://github.com/jupyter/docker-stacks/tree/master/r-notebook]
 # https://hub.docker.com/r/jupyter/r-notebook/dockerfile
 
-FROM jupyter/r-notebook:2023-01-24
+FROM jupyter/r-notebook:2023-03-27
 
 # Configure environment
 ENV DOCKER_IMAGE_NAME='datascience-env'
-ENV VERSION='2023-01-27' 
+ENV VERSION='2023-03-29' 
 
 # Docker name to shell prompt
 ENV PS1A="[docker] \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"

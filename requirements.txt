@@ -1,6 +1,8 @@
 lckr-jupyterlab-variableinspector
+numpy
+matplotlib
 pandas
 seaborn
 openpyxl
 papermill
-jupyter-book
+statsmodels
