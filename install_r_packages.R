@@ -20,3 +20,4 @@ install.packages('ggraph',repos = 'http://cran.us.r-project.org')
 
 # Data science
 install.packages('tidyverse',repos = 'http://cran.us.r-project.org')
+install.packages('investr',repos = 'http://cran.us.r-project.org')
