@@ -16,26 +16,10 @@ Be aware that the user ```researcher``` within you Docker container won't share 
 
 From the project folder, run the command below:
 
-```docker-compose up -d```
-
-To connect to a container that is already running ("datascience" is the service name):
-
-```docker-compose exec datascience /bin/bash```
-
-Close the container with:
-
-```docker-compose down```
+```docker-compose up```
 
 ## Alternative approach
 
 You can run the following command:
 
-```docker run -d -it --rm  -p 7777:7777 -p 7878:7878 --volume $HOME:/home/researcher --user root --name datascience gnasello/datascience-env:latest```
-
-To connect to a container that is already running ("datascience" is the container name):
-
-```docker exec -it datascience /bin/bash```
-
-After use, you close the container with:
-
-```docker rm -f datascience```
+```docker run -it --rm  -p 8888:8888 --volume $HOME:/home/researcher --user root --name datascience gnasello/datascience-env:latest```
