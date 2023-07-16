@@ -2,18 +2,11 @@ version: '3'
 
 services:
   datascience:
-    image: gnasello/datascience-env:2023-03-29
-    build: .
+    image: gnasello/datascience-env:2023-07-14
     ports:
-      - $JLPORT:$JLPORT
-      - $RSPORT:7878
-    volumes:
-      - $HOME_RESEARCHER:/home/researcher # change the path before ":" with the volume you want to mount
-    working_dir: /home/researcher
-    entrypoint: bash /entrypoint.sh
-    hostname: $HOST_NAME
+      - 8888:8888
     environment:
-       - JLPORT=${JLPORT}
-       - RSPORT=${RSPORT}
-       - HOME_RESEARCHER=${HOME_RESEARCHER}
-       - HOST_NAME=${HOST_NAME}
+      #- PUID=1000
+      - PUID=664931380
+      # - PGID=1000
+      - PGID=664200513
