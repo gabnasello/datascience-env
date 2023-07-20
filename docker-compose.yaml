@@ -5,8 +5,3 @@ services:
     image: gnasello/datascience-env:2023-07-14
     ports:
       - 8888:8888
-    environment:
-      #- PUID=1000
-      - PUID=664931380
-      # - PGID=1000
-      - PGID=664200513
