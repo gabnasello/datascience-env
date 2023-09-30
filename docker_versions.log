@@ -1,5 +1,13 @@
 -------------------------------
 
+v. 2023-09-27
+
+Update to linuxserver webtop
+
+Remove Binder
+
+-------------------------------
+
 v. 2023-07-16
 
 Update of base docker to jupyter/r-notebook:2023-07-11
