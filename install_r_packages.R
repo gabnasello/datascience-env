@@ -23,4 +23,6 @@ install.packages('ggraph',repos = 'http://cran.us.r-project.org')
 
 # Data science
 install.packages('tidyverse',repos = 'http://cran.us.r-project.org')
+install.packages('plyr',repos = 'http://cran.us.r-project.org')
 install.packages('investr',repos = 'http://cran.us.r-project.org')
+#install.packages('reshape',repos = 'http://cran.us.r-project.org')

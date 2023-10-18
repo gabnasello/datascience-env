@@ -1,13 +1,8 @@
 FROM lscr.io/linuxserver/webtop:amd64-ubuntu-kde-version-0f29909a
-#FROM lscr.io/linuxserver/webtop:amd64-ubuntu-icewm-version-f91f0828
-
-# sudo dpkg --add-architecture i386 && sudo apt-get update && sudo apt-get install wine32 winetricks -y
-# wineboot
-# winetricks win10
 
 # Configure environment
 ENV DOCKER_IMAGE_NAME='datascience-env'
-ENV VERSION='2023-09-27' 
+ENV VERSION='2023-10-17' 
 
 # title
 ENV TITLE=DataScience
@@ -21,7 +16,7 @@ EXPOSE 8888
 VOLUME /config
 
 RUN apt-get update && \
-    apt-get install -y vim git\ 
+    apt-get install -y vim git wget\ 
                        python-is-python3 \
                        python3-pip
 
@@ -29,8 +24,18 @@ RUN apt-get update && \
 ADD requirements.txt /
 RUN pip install -r /requirements.txt
 
-# Install R
+# Install cmake and libfontconfig1 (necessary for some R packages)
 RUN apt update && \
+    apt install libfontconfig1-dev cmake -y
+
+# Install R on Ubuntu from CRAN Repository
+# https://phoenixnap.com/kb/install-r-ubuntu
+
+RUN apt update && \
+    apt install software-properties-common dirmngr -y && \
+    wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc  && \
+    gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc && \
+    add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" && \
     apt install r-base r-base-dev -y
 
 # Install R packages

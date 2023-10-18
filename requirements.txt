@@ -1,4 +1,5 @@
-lckr-jupyterlab-variableinspector
+notebook
+jupyterlab
 numpy
 matplotlib
 pandas

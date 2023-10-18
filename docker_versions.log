@@ -1,5 +1,17 @@
 -------------------------------
 
+v. 2023-17-04
+
+Install libfontconfig1-dev for R packages
+
+-------------------------------
+
+v. 2023-10-04
+
+Install CMake for R packages
+
+-------------------------------
+
 v. 2023-09-27
 
 Update to linuxserver webtop

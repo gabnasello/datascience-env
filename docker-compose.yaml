@@ -1,8 +1,8 @@
 ---
 version: "3"
 services:
-  linuxserver:
-    image: gnasello/datascience-env:latest
+  datascience:
+    image: gnasello/datascience-env:2023-10-17
     container_name: webtop
     security_opt:
       - seccomp:unconfined # for terminal to work
