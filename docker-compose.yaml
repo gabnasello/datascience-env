@@ -2,7 +2,7 @@
 version: "3"
 services:
   datascience:
-    image: gnasello/datascience-env:2023-12-19
+    image: gnasello/datascience-env:2023-12-23
     container_name: datascience-env
     user: root
     environment:

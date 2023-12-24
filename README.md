@@ -12,14 +12,10 @@ From the project folder, run the command below:
 
 From the project folder, run the command below:
 
-```docker-compose up -d```
+```docker-compose up```
 
 ## Alternative approach
 
 You can run the following command:
 
-```docker run -d -p 3000:3000 --name datascience gnasello/datascience-env:latest```
-
-# Use the Docker
-
-Open ```localhost:3000``` in your browser to get a virtual desktop.
+```docker run -p 8888:8888 --name datascience gnasello/datascience-env:latest```
