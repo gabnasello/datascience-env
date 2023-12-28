@@ -2,11 +2,10 @@
 version: "3"
 services:
   datascience:
-    image: gnasello/datascience-env:2023-12-23
+    image: gnasello/datascience-env:2023-12-28
     container_name: datascience-env
     user: root
     environment:
-    - NB_USER=researcher
     - NB_UID=1234
     - NB_GID=1234
     - CHOWN_HOME=yes

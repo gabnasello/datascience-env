@@ -1,5 +1,11 @@
 -------------------------------
 
+v. 2023-12-28
+
+Install cmake and add "examples"
+
+-------------------------------
+
 v. 2023-12-23
 
 Add "jl" command for "jupyter server list"
