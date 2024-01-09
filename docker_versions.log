@@ -1,5 +1,13 @@
 -------------------------------
 
+v. 2024-01-03
+
+Add examples "barplot_multiGroup" and "barplot_side-by-side"
+
+Install RStudio server
+
+-------------------------------
+
 v. 2023-12-28
 
 Install cmake and add "examples"
