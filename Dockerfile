@@ -2,7 +2,7 @@ FROM quay.io/jupyter/r-notebook:2023-12-14
 
 # Configure environment
 ENV DOCKER_IMAGE_NAME='datascience-env'
-ENV VERSION='2024-01-03' 
+ENV VERSION='2024-01-23' 
 
 # Copy examples directory
 COPY --chown=jovyan:jovyan examples/ /home/jovyan/examples/
@@ -19,9 +19,9 @@ RUN apt update && apt -y install cmake
 RUN RSTUDIO_URL="https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2023.12.0-369-amd64.deb" && \
     apt-get update && \
     apt-get -y install gdebi-core && \
-    wget -O rstudio.deb $RSTUDIO_URL && \
-    gdebi rstudio.deb && \
-    rm rstudio.deb
+    wget -O /rstudio.deb $RSTUDIO_URL && \
+    gdebi -n /rstudio.deb && \
+    rm /rstudio.deb
 
 USER jovyan
 # Install Python packages
