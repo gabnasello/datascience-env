@@ -1,0 +1,3 @@
+ARG VERSION=latest
+ARG BASE_CONTAINER=gnasello/datascience-env:$VERSION
+FROM $BASE_CONTAINER
