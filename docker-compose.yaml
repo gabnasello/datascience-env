@@ -2,7 +2,7 @@
 version: "3"
 services:
   datascience:
-    image: gnasello/datascience-env:2024-05-15
+    image: gnasello/datascience-env:2024-05-16
     container_name: datascience-env
     user: root
     environment:
@@ -12,4 +12,4 @@ services:
     - CHOWN_HOME_OPTS=-R
     - GRANT_SUDO=yes
     ports:
-      - 8888:8888
+      - 7777:8888

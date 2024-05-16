@@ -1,5 +1,5 @@
 #!/bin/bash
 
-VESRION='2024-05-15'
+VESRION='2024-05-16'
 
 docker build --no-cache -t gnasello/datascience-env:$VESRION .
