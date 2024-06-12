@@ -1,5 +1,15 @@
 -------------------------------
 
+v. 2024-06-12
+
+Install R libraries:
+
+- ggplotUtils [https://github.com/gabnasello/ggplotUtils.git]
+- statsUtils [https://github.com/gabnasello/statsUtils.git]
+
+
+-------------------------------
+
 v. 2024-05-16
 
 Install cmake

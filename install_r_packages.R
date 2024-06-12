@@ -26,3 +26,11 @@ install.packages('tidyverse',repos = 'http://cran.us.r-project.org')
 install.packages('plyr',repos = 'http://cran.us.r-project.org')
 install.packages('investr',repos = 'http://cran.us.r-project.org')
 #install.packages('reshape',repos = 'http://cran.us.r-project.org')
+
+# Install ggplotUtils
+devtools::build("ggplotUtils")
+devtools::install("ggplotUtils")
+
+# Install statsUtils
+devtools::build("statsUtils")
+devtools::install("statsUtils")
