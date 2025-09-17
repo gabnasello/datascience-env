@@ -34,3 +34,7 @@ devtools::install("ggplotUtils")
 # Install statsUtils
 devtools::build("statsUtils")
 devtools::install("statsUtils")
+
+# Install dataprepUtils
+devtools::build("dataprepUtils")
+devtools::install("dataprepUtils")

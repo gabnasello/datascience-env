@@ -1,5 +1,14 @@
 -------------------------------
 
+v. 2025-09-17
+
+Install R libraries:
+
+- dataprepUtils [https://github.com/gabnasello/dataprepUtils.git]
+- Add README.ipynb 
+
+-------------------------------
+
 v. 2024-06-12
 
 Install R libraries:

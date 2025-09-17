@@ -1,5 +1,15 @@
+
 #!/bin/bash
 
-VERSION='2024-06-12'
+DOCKERHUB_USER="gnasello"
+CONTAINER_NAME="datascience-env"
+VERSION="2025-09-17"
+ARCH="amd64"  # or "arm64"
 
-docker build --no-cache -t gnasello/datascience-env:$VERSION .
+# Build and load the image for the specified architecture
+docker buildx build \
+    --no-cache \
+    --platform "linux/${ARCH}" \
+    -t "${DOCKERHUB_USER}/${CONTAINER_NAME}:${VERSION}-${ARCH}" \
+    --load \
+    -f Dockerfile .

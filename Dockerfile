@@ -1,11 +1,12 @@
-FROM quay.io/jupyter/r-notebook:2023-12-14
+FROM quay.io/jupyter/r-notebook:2025-09-16
 
 # Configure environment
-ENV DOCKER_IMAGE_NAME='datascience-env'
-ENV VERSION='2024-06-12' 
+ENV DOCKER_IMAGE_NAME='gnasello/datascience-env'
+ENV VERSION='2025-09-17' 
 
-# Copy examples directory
-COPY --chown=jovyan:jovyan examples/ /home/jovyan/examples/
+# Add README file
+# ADD README.ipynb /home/jovyan/
+COPY --chown=jovyan:users README.ipynb /home/jovyan/
 
 # Remove work directory
 RUN rm -r /home/jovyan/work
@@ -24,8 +25,9 @@ USER jovyan
 ADD install_r_packages.R /
 RUN git clone https://github.com/gabnasello/ggplotUtils.git
 RUN git clone https://github.com/gabnasello/statsUtils.git
+RUN git clone https://github.com/gabnasello/dataprepUtils.git
 RUN Rscript /install_r_packages.R
-RUN rm -r ggplotUtils/ /home/jovyan/ggplotUtils*.tar.gz statsUtils/ /home/jovyan/statsUtils*.tar.gz
+RUN rm -r ggplotUtils/ /home/jovyan/ggplotUtils*.tar.gz statsUtils/ /home/jovyan/statsUtils*.tar.gz dataprepUtils/ /home/jovyan/dataprepUtils*.tar.gz
 
 # Add "jl" command
 RUN echo "alias jl='jupyter server list'" >> ~/.bashrc
