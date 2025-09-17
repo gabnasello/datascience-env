@@ -1,6 +1,4 @@
-
 #!/bin/bash
-
 DOCKERHUB_USER="gnasello"
 CONTAINER_NAME="datascience-env"
 VERSION="2025-09-17"

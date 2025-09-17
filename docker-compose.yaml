@@ -1,6 +1,6 @@
 services:
   datascience:
-    image: gnasello/datascience-env:2024-06-12_arm64
+    image: gnasello/datascience-env:2025-09-17-amd64
     container_name: datascience-env
     user: root
     ports:

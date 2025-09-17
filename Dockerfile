@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/r-notebook:2025-09-16
+FROM quay.io/jupyter/r-notebook:2024-10-22
 
 # Configure environment
 ENV DOCKER_IMAGE_NAME='gnasello/datascience-env'
@@ -17,7 +17,17 @@ RUN pip install -r /requirements.txt
 
 USER root
 # Install Cmake (required by some R packages, like ggpubr)
-RUN apt update && apt -y install cmake
+# RUN apt update && apt -y install cmake
+RUN apt-get update && apt-get install -y \
+    cmake \
+    libfontconfig1-dev \
+    libfreetype6-dev \
+    libharfbuzz-dev \
+    libfribidi-dev \
+    libpng-dev \
+    pkg-config \
+    build-essential
+
 
 USER jovyan
 
