@@ -2,7 +2,7 @@ FROM quay.io/jupyter/r-notebook:2024-10-22
 
 # Configure environment
 ENV DOCKER_IMAGE_NAME='gnasello/datascience-env'
-ENV VERSION='2025-09-17' 
+ENV VERSION='2025-09-18' 
 
 # Add README file
 # ADD README.ipynb /home/jovyan/

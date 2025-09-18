@@ -11,8 +11,6 @@ docker buildx build `
     --no-cache `
     --platform "linux/$ARCH" `
     -t "${DOCKERHUB_USER}/${CONTAINER_NAME}:${VERSION}-$ARCH" `
-    -t "${DOCKERHUB_USER}/${CONTAINER_NAME}:${VERSION}" `
-    -t "${DOCKERHUB_USER}/${CONTAINER_NAME}:latest" `
     --push `
     -f Dockerfile .
 
